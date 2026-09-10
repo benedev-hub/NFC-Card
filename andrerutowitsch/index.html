@@ -1,1 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEO | Benevix</title>
+    <!-- Ignora o pedido de favicon para não travar o carregamento -->
+    <link rel="icon" href="data:,">
+    <style>
+        /* Fontes nativas para carregamento instantâneo */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(180deg, #122845 0%, #070d18 50%, #000000 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #ffffff; 
+        }
+        
+        .card {
+            width: 100%;
+            max-width: 420px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 30px 40px 30px;
+            box-sizing: border-box;
+        }
+        
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top; 
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        
+        .name {
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+        
+        .title {
+            font-size: 13px;
+            font-weight: 500;
+            color: #8fa6c7; 
+            margin: 5px 0 20px 0;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
 
+        .divider {
+            width: 50%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 25px;
+        }
+        
+        .manifesto {
+            font-size: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #c4d1e1;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+       .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 35px; 
+            margin-bottom: 30px;
+        }
+        
+        .qr-code {
+            width: 130px;
+            height: 130px;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .qr-text {
+            font-size: 11px;
+            color: #8fa6c7;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+ 
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary { 
+            background-color: #ffffff; 
+            color: #122845; 
+        }
+        .btn-whatsapp { 
+            background-color: rgba(37, 211, 102, 0.1); 
+            color: #25D366; 
+            border: 1px solid rgba(37, 211, 102, 0.5);
+        }
+        .btn-linkedin { 
+            background-color: rgba(0, 119, 181, 0.1); 
+            color: #4da6ff; 
+            border: 1px solid rgba(0, 119, 181, 0.5);
+        }
+        .btn-secondary { 
+            background-color: transparent; 
+            color: #ffffff; 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+        }
+
+        .spacer {
+            flex-grow: 1;
+            min-height: 50px;
+        }
+
+        .footer-logo-container {
+            width: 100%;
+            text-align: left;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .footer-logo {
+            font-size: 38px;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .footer-tagline {
+            font-size: 11px;
+            color: #8fa6c7;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .footer-line {
+            position: absolute;
+            bottom: 5px;
+            right: 0;
+            width: 35%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .top-logo-container {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 40px; 
+            margin-bottom: 30px; 
+        }
+
+        .top-logo-img {
+            max-width: 90px; 
+            height: auto;
+            object-fit: contain;
+        }
+
+        .legal-footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 10px;
+            color: #5a6b82; 
+            line-height: 1.5;
+            border-top: 1px solid rgba(255, 255, 255, 0.1); 
+            padding-top: 20px;
+            width: 100%;
+        }
+        
+        .legal-footer p {
+            margin: 3px 0;
+            font-weight: 400;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+
+        <!-- NOVA LOGO NO TOPO ESQUERDO -->
+        <div class="top-logo-container">
+            <img src="logo-benevix.png" alt="Benevix" class="top-logo-img">
+        </div>
+
+        <!-- Foto de Perfil -->
+        <img src="foto-ceo.jpg" alt="Nome do CEO" class="profile-pic">
+        
+        <!-- Textos -->
+        <h1 class="name">Nome do CEO</h1>
+        <h2 class="title">CEO | Benevix</h2>
+        <div class="divider"></div>
+        <p class="manifesto">Liderando com inovação e compromisso para transformar a gestão de benefícios e garantir a excelência no atendimento aos nossos clientes.</p>
+        
+        <!-- Botões -->
+        <a href="#" id="btn-contato" class="btn btn-primary">Salvar na Agenda</a>
+        <a href="https://wa.me/5511000000000" target="_blank" class="btn btn-whatsapp">Falar no WhatsApp</a>
+        <a href="https://linkedin.com/in/seulink" target="_blank" class="btn btn-linkedin">Conectar no LinkedIn</a>
+        <a href="https://www.benevix.com.br" target="_blank" class="btn btn-secondary">Conhecer a Benevix</a>
+
+        <!-- Seção do QR Code -->
+        <div class="qr-container">
+            <img src="qrcode.png" alt="QR Code do Contato" class="qr-code">
+            <div class="qr-text">Escaneie para conectar</div>
+        </div>
+
+        <!-- Rodapé Corporativo -->
+        <div class="legal-footer">
+            <p>Endereço da Benevix - Cidade - UF</p>
+            <p>&copy; 2026 Benevix | Administradora de Benefícios.</p>
+            <p>CNPJ: 00.000.000/0001-00</p>
+        </div>
+    </div>
+
+    <!-- Script de Detecção de Aparelho -->
+    <script>
+        document.getElementById('btn-contato').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            if (/android/i.test(userAgent)) {
+                // Configuração da Intent para Android (Cuidado com os espaços = %20)
+                window.location.href = "intent://contacts/insert?name=Nome%20do%20CEO&company=Benevix&title=CEO&phone=+5511000000000#Intent;scheme=content;type=vnd.android.cursor.dir/contact;end";
+            } else {
+                // Download do VCF para iPhone
+                window.location.href = "contato_ceo.vcf";
+            }
+        });
+    </script>
+</body>
+</html>
